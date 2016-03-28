@@ -1,7 +1,7 @@
 import React from 'react';
 import CommentList from '../../comments/containers/comment_list';
 
-const Post = ({post}) => (
+const Post = ({ post }) => (
   <div>
     {post.saving ? <p>Saving...</p> : null}
     <h2>{post.title}</h2>
@@ -10,9 +10,13 @@ const Post = ({post}) => (
     </p>
     <div>
       <h4>Comments</h4>
-      <CommentList postId={post._id}/>
+      <CommentList postId={post._id} />
     </div>
   </div>
 );
+
+Post.propTypes = {
+  post: PropTypes.object.isRequired,
+};
 
 export default Post;

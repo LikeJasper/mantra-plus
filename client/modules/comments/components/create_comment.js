@@ -1,34 +1,40 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 class CreateComment extends React.Component {
-  render() {
-    const {error} = this.props;
-    return (
-      <div>
-        {error ? this._renderError(error) : null}
-        <textarea ref='text' placeholder='Enter your comment here.'>
-
-        </textarea>
-        <br />
-        <button onClick={this._create.bind(this)}>Add Comment</button>
-      </div>
-    );
-  }
-
   _create() {
     const text = this.refs.text.value;
-    const {create, postId} = this.props;
+    const { create, postId } = this.props;
     create(postId, text);
     this.refs.text.value = '';
   }
 
   _renderError(error) {
     return (
-      <div className='error'>
+      <div className="error">
         {error}
       </div>
     );
   }
+
+  render() {
+    const { error } = this.props;
+    return (
+      <div>
+        {error ? this._renderError(error) : null}
+        <textarea ref="text" placeholder="Enter your comment here.">
+
+        </textarea>
+        <br />
+        <button onClick={this._create}>Add Comment</button>
+      </div>
+    );
+  }
 }
+
+CreateComment.propTypes = {
+  create: PropTypes.func.isRequired,
+  postId: PropTypes.string.isRequired,
+  error: PropTypes.string,
+};
 
 export default CreateComment;

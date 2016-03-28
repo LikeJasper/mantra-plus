@@ -13,7 +13,7 @@ describe('core.components.main_layout', () => {
   it('should render childrens', () => {
     const Comp = () => (<p>Hello</p>);
     const el = shallow(
-      <MainLayout content={() => (<Comp />)}/>
+      <MainLayout content={() => (<Comp />)} />
     );
 
     expect(el.contains(<Comp />)).to.be.equal(true);

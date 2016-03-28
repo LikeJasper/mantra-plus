@@ -35,8 +35,8 @@ describe('core.components.newpost', () => {
     const instance = el.instance();
 
     instance.refs = {
-      titleRef: {value: title},
-      contentRef: {value: content}
+      titleRef: { value: title },
+      contentRef: { value: content },
     };
 
     el.find('form').simulate('submit');
