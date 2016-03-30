@@ -1,5 +1,5 @@
 import PostList from '../components/postlist';
-import {useDeps, composeWithTracker, composeAll} from 'mantra-core';
+import { useDeps, composeWithTracker, composeAll } from 'mantra-core';
 
 export const composer = ({ context }, onData) => {
   const { Meteor, Collections } = context();

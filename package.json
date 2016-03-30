@@ -4,7 +4,7 @@
   "scripts": {
     "commitmsg": ".scripts/validate-commit-msg.js",
     "prepush": "npm test",
-    "lint": "eslint ./lib ./client ./server --ext .js --ext .jsx",
+    "lint": "eslint ./lib ./client ./server --ext .js",
     "lintfix": "npm run lint -- --fix",
     "testonly": "mocha .scripts/mocha_boot.js client/**/tests/**/*.js --compilers js:babel-core/register",
     "test": "npm run lint && npm run testonly",
