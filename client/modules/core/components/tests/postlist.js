@@ -11,24 +11,22 @@ describe('core.components.postlist', () => {
 
   it('should list given number of items', () => {
     const el = shallow(<PostList posts={posts} />);
-    expect(el.find('li').length).to.be.equal(posts.length);
+    expect(el.find('ListItem').length).to.be.equal(posts.length);
   });
 
   it('should list post title for each item', () => {
     const el = shallow(<PostList posts={posts} />);
-    const lis = el.find('li');
-    lis.forEach((li, index) => {
-      const aText = li.find('a').first().text();
-      expect(aText).to.be.equal(posts[index].title);
+    const items = el.find('ListItem');
+    items.forEach((item, index) => {
+      expect(item.prop('primaryText')).to.be.equal(posts[index].title);
     });
   });
 
   it('shallow list post link for each items', () => {
     const el = shallow(<PostList posts={posts} />);
-    const lis = el.find('li');
-    lis.forEach((li, index) => {
-      const href = li.find('a').first().prop('href');
-      expect(href).to.be.equal(`/post/${posts[index]._id}`);
+    const items = el.find('ListItem');
+    items.forEach((item, index) => {
+      expect(item.prop('href')).to.be.equal(`/post/${posts[index]._id}`);
     });
   });
 });

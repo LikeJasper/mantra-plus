@@ -12,8 +12,8 @@ describe('core.components.newpost', () => {
 
   it('should display the create post form', () => {
     const el = shallow(<NewPost />);
-    const title = el.find('input').first();
-    const content = el.find('textarea').first();
+    const title = el.find('TextField').at(0);
+    const content = el.find('TextField').at(1);
     const form = el.find('form').first();
 
     expect(title.node.ref).to.be.equal('titleRef');
@@ -35,8 +35,8 @@ describe('core.components.newpost', () => {
     const instance = el.instance();
 
     instance.refs = {
-      titleRef:   { value: title },
-      contentRef: { value: content },
+      titleRef:   { getValue: () => title },
+      contentRef: { getValue: () => content },
     };
 
     el.find('form').simulate('submit');

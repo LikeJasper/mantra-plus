@@ -19,8 +19,8 @@ describe('comments.components.create_comment', () => {
 
   it('should display the create comment form', () => {
     const el = shallow(<CreateComment />);
-    const textarea = el.find('textarea').first();
-    const button = el.find('button').first();
+    const textarea = el.find('TextField');
+    const button = el.find('RaisedButton');
 
     expect(textarea.node.ref).to.be.equal('text');
     expect(button.prop('onClick')).to.be.a('function');
@@ -30,9 +30,9 @@ describe('comments.components.create_comment', () => {
     const postId = 'the-id';
     const text = 'the-text';
 
-    const onCreate = () => {
-      expect(postId).to.be.equal(postId);
-      expect(text).to.be.equal(text);
+    const onCreate = (postIdArg, textArg) => {
+      expect(postIdArg).to.be.equal(postId);
+      expect(textArg).to.be.equal(text);
       done();
     };
 
@@ -40,9 +40,13 @@ describe('comments.components.create_comment', () => {
     const instance = el.instance();
 
     instance.refs = {
-      text: { value: text },
+      text: {
+        getValue:      () => text,
+        _getInputNode: () => ({}),
+        setState:      () => null,
+      },
     };
 
-    el.find('button').simulate('click');
+    el.find('RaisedButton').simulate('click');
   });
 });
