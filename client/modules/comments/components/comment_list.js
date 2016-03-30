@@ -25,7 +25,7 @@ const CommentList = ({ comments, postId }) => (
 
 CommentList.propTypes = {
   comments: PropTypes.arrayOf(PropTypes.object).isRequired,
-  postId: PropTypes.string.isRequired,
+  postId:   PropTypes.string.isRequired,
 };
 
 export default CommentList;

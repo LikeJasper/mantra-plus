@@ -12,9 +12,9 @@ export const composer = ({ context, clearErrors }, onData) => {
 };
 
 export const depsMapper = (context, actions) => ({
-  create: actions.comments.create,
+  create:      actions.comments.create,
   clearErrors: actions.comments.clearErrors,
-  context: () => context,
+  context:     () => context,
 });
 
 export default composeAll(

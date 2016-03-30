@@ -45,7 +45,7 @@ class CreateComment extends React.Component {
 CreateComment.propTypes = {
   create: PropTypes.func.isRequired,
   postId: PropTypes.string.isRequired,
-  error: PropTypes.string,
+  error:  PropTypes.string,
 };
 
 export default CreateComment;

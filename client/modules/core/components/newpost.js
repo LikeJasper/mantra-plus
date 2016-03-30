@@ -50,7 +50,7 @@ class NewPost extends React.Component {
 }
 
 NewPost.propTypes = {
-  error: PropTypes.string,
+  error:  PropTypes.string,
   create: PropTypes.func.isRequired,
 };
 

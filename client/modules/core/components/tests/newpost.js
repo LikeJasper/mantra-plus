@@ -35,7 +35,7 @@ describe('core.components.newpost', () => {
     const instance = el.instance();
 
     instance.refs = {
-      titleRef: { value: title },
+      titleRef:   { value: title },
       contentRef: { value: content },
     };
 
