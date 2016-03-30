@@ -13,11 +13,11 @@
   },
   "dependencies": {
     "domready": "^1.0.8",
-    "mantra-core": "^1.2.0",
+    "mantra-core": "^1.5.0",
     "material-ui": "^0.14.4",
-    "react": "^0.14.6",
-    "react-dom": "^0.14.6",
-    "react-mounter": "^1.0.0",
+    "react": "^15.0.0",
+    "react-dom": "^15.0.0",
+    "react-mounter": "^1.2.0",
     "react-tap-event-plugin": "^0.2.2"
   },
   "devDependencies": {
@@ -40,15 +40,8 @@
     "raw-loader": "^0.5.1",
     "react-addons-test-utils": "^15.0.0",
     "sinon": "1.17.x",
+    "sinon-chai": "^2.8.0",
     "style-loader": "^0.13.1"
-  },
-  "dependencies": {
-    "domready": "^1.0.8",
-    "mantra-core": "^1.5.0",
-    "react": "^15.0.0",
-    "react-dom": "^15.0.0",
-    "react-mounter": "^1.2.0",
-    "sinon": "1.17.x"
   },
   "private": true
 }
