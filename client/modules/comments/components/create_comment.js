@@ -1,11 +1,18 @@
 import React, { PropTypes } from 'react';
+import { RaisedButton, TextField } from 'material-ui';
 
 class CreateComment extends React.Component {
+  constructor(props) {
+    super(props);
+    this._create = this._create.bind(this);
+  }
+
   _create() {
-    const text = this.refs.text.value;
+    const text = this.refs.text;
     const { create, postId } = this.props;
-    create(postId, text);
-    this.refs.text.value = '';
+    create(postId, text.getValue());
+    text._getInputNode().value = '';
+    text.setState({ hasValue: false });
   }
 
   _renderError(error) {
@@ -21,11 +28,15 @@ class CreateComment extends React.Component {
     return (
       <div>
         {error ? this._renderError(error) : null}
-        <textarea ref="text" placeholder="Enter your comment here.">
-
-        </textarea>
-        <br />
-        <button onClick={this._create}>Add Comment</button>
+        <TextField
+          ref="text"
+          hintText="Enter your comment here."
+        />
+        <RaisedButton
+          onClick={this._create}
+          label="Add Comment"
+          primary
+        />
       </div>
     );
   }

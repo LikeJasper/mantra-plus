@@ -5,6 +5,14 @@ import initContext from './configs/context';
 import coreModule from './modules/core';
 import commentsModule from './modules/comments';
 
+import injectTapEventPlugin from 'react-tap-event-plugin';
+
+// Needed for onTouchTap
+// Can go away when react 1.0 release
+// Check this repo:
+// https://github.com/zilverline/react-tap-event-plugin
+injectTapEventPlugin();
+
 // init context
 const context = initContext();
 

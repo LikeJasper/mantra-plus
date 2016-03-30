@@ -1,18 +1,24 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import CommentList from '../../comments/containers/comment_list';
+import {
+  Card,
+  CardTitle,
+  CardText,
+  Divider,
+} from 'material-ui';
 
 const Post = ({ post }) => (
-  <div>
-    {post.saving ? <p>Saving...</p> : null}
-    <h2>{post.title}</h2>
-    <p>
+  <Card>
+    <CardTitle title={post.title} subtitle={post.saving ? 'Saving...' : null} />
+    <CardText>
       {post.content}
-    </p>
-    <div>
-      <h4>Comments</h4>
+    </CardText>
+    <Divider />
+    <CardTitle title="Comments" />
+    <CardText>
       <CommentList postId={post._id} />
-    </div>
-  </div>
+    </CardText>
+  </Card>
 );
 
 Post.propTypes = {

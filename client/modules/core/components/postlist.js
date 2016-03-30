@@ -1,15 +1,24 @@
 import React, { PropTypes } from 'react';
+import { Card, CardTitle, CardText, List, ListItem } from 'material-ui';
+import ActionGrade from 'material-ui/lib/svg-icons/action/grade';
 
 const PostList = ({ posts }) => (
-  <div className="postlist">
-    <ul>
-      {posts.map(post => (
-        <li key={post._id}>
-          <a href={`/post/${post._id}`}>{post.title}</a>
-        </li>
-      ))}
-    </ul>
-  </div>
+  <Card className="postlist">
+    <CardTitle title="Posts" />
+    <CardText>
+      <List>
+        {posts.map(post => (
+          <ListItem
+            key={post._id}
+            leftIcon={<ActionGrade />}
+            primaryText={post.title}
+            linkButton
+            href={`/post/${post._id}`}
+          />
+        ))}
+      </List>
+    </CardText>
+  </Card>
 );
 
 PostList.propTypes = {

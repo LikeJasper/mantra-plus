@@ -1,8 +1,14 @@
 import React, { PropTypes } from 'react';
+import { Card, CardTitle, CardText, RaisedButton, TextField } from 'material-ui';
 
 class NewPost extends React.Component {
+  constructor(props) {
+    super(props);
+    this.createPost = this.createPost.bind(this);
+  }
+
   createPost(event) {
-    // Becaus the test cannot get event argument
+    // Because the test cannot get event argument
     // so call preventDefault() on undefined cause an error
     if (event && event.preventDefault) {
       event.preventDefault();
@@ -11,20 +17,34 @@ class NewPost extends React.Component {
     const { create } = this.props;
     const { titleRef, contentRef } = this.refs;
 
-    create(titleRef.value, contentRef.value);
+    create(titleRef.getValue(), contentRef.getValue());
   }
 
   render() {
     const { error } = this.props;
     return (
-      <form className="new-post" onSubmit={ this.createPost }>
-        <h2>Add New Post</h2>
-        {error ? <p style={{ color: 'red' }}>{error}</p> : null}
-
-        <input ref="titleRef" type="Text" placeholder="Enter your post title." /> <br />
-        <textarea ref="contentRef" placeholder="Enter your post content." /> <br />
-        <button type="submit">Add New</button>
-      </form>
+      <Card>
+        <CardTitle
+          title="Add New Post"
+          subtitle={error ? <span style={{ color: 'red' }}>{error}</span> : null}
+        />
+        <CardText>
+          <form className="new-post" onSubmit={ this.createPost }>
+            <TextField
+              ref="titleRef"
+              hintText="Enter your post title."
+            />
+            <br />
+            <TextField
+              ref="contentRef"
+              hintText="Enter your post content."
+              rows={2}
+            />
+            <br />
+            <RaisedButton type="submit" primary label="Add New" />
+          </form>
+        </CardText>
+      </Card>
     );
   }
 }
