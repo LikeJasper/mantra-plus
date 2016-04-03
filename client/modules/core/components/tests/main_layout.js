@@ -6,7 +6,7 @@ import Navigation from '../navigation';
 
 describe('core.components.main_layout', () => {
   it('should contain navigation', () => {
-    const el = shallow(<MainLayout />);
+    const el = shallow(<MainLayout content={() => (<div />)} />);
     expect(el.contains(<Navigation />)).to.be.equal(true);
   });
 

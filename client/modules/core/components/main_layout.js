@@ -1,21 +1,38 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import Navigation from './navigation';
 import Footer from './footer';
 
-const Layout = ({ content = () => null }) => (
-  <div>
-    <Navigation />
+class Layout extends Component {
+  getChildContext() {
+    const { muiTheme } = this.props;
+    return {
+      muiTheme,
+    };
+  }
 
-    <main>
-      {content()}
-    </main>
+  render() {
+    const { content } = this.props;
+    return (
+      <div>
+        <Navigation />
 
-    <Footer />
-  </div>
-);
+        <main>
+          {content()}
+        </main>
+
+        <Footer />
+      </div>
+    );
+  }
+}
 
 Layout.propTypes = {
-  content: PropTypes.func,
+  content:  PropTypes.func.isRequired,
+  muiTheme: PropTypes.object,
+};
+
+Layout.childContextTypes = {
+  muiTheme: PropTypes.object,
 };
 
 export default Layout;
