@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import Helmet from './helmet';
 import Navigation from './navigation';
 import Footer from './footer';
 
@@ -14,6 +15,7 @@ class Layout extends Component {
     const { content } = this.props;
     return (
       <div>
+        <Helmet />
         <Navigation />
 
         <main>
