@@ -11,7 +11,7 @@ class CreateComment extends React.Component {
     const text = this.refs.text;
     const { create, postId } = this.props;
     create(postId, text.getValue());
-    text._getInputNode().value = '';
+    text.input.value = '';
     text.setState({ hasValue: false });
   }
 

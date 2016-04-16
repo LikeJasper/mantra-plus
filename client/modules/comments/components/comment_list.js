@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import CreateComment from '../containers/create_comment.js';
 import { Avatar, List, ListItem } from 'material-ui';
-import { SocialPerson } from 'material-ui/lib/svg-icons';
+import { SocialPerson } from 'material-ui/svg-icons';
 
 const CommentList = ({ comments, postId }) => (
   <div className="comments">

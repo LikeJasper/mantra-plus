@@ -1,6 +1,6 @@
 import React from 'react';
 import { AppBar, IconMenu, IconButton, MenuItem } from 'material-ui';
-import { NavigationMenu as MenuIcon } from 'material-ui/lib/svg-icons';
+import { NavigationMenu as MenuIcon } from 'material-ui/svg-icons';
 
 export const NavigationMenu = () => (
   <IconMenu

@@ -1,6 +1,14 @@
 import React, { PropTypes } from 'react';
-import { Card, CardTitle, CardText, List, ListItem } from 'material-ui';
-import ActionGrade from 'material-ui/lib/svg-icons/action/grade';
+import {
+  Card,
+  CardTitle,
+  CardText,
+  List,
+  ListItem,
+} from 'material-ui';
+import {
+  ActionGrade,
+} from 'material-ui/svg-icons';
 
 const PostList = ({ posts }) => (
   <Card className="postlist">
