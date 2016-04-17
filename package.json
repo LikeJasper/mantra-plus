@@ -31,6 +31,7 @@
     "babel-preset-stage-2": "6.x.x",
     "babel-root-slash-import": "1.x.x",
     "chai": "3.x.x",
+    "chai-enzyme": "^0.4.2",
     "enzyme": "^2.2.0",
     "eslint": "^2.5.1",
     "eslint-config-airbnb": "^6.2.0",
