@@ -1,11 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 import Context from '../../../../../.storybook/Context';
-import Navigation from '../navigation';
+import Helmet from '../helmet';
 
-storiesOf('core.Navigation', module)
+storiesOf('core.Helmet', module)
   .add('default view', () => (
     <Context>
-      <Navigation />
+      <Helmet />
     </Context>
   ));
