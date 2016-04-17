@@ -3,8 +3,7 @@ import { Meteor } from 'meteor/meteor';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { ReactiveDict } from 'meteor/reactive-dict';
 import { Tracker } from 'meteor/tracker';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import RawTheme from './theme';
+import muiTheme from './muiTheme';
 
 export default function () {
   return {
@@ -12,7 +11,7 @@ export default function () {
     FlowRouter,
     Collections,
     Tracker,
+    muiTheme,
     LocalState: new ReactiveDict(),
-    muiTheme:   getMuiTheme(RawTheme),
   };
 }

@@ -1,11 +1,10 @@
 import React, { Component, PropTypes } from 'react';
-import rawTheme from '../client/configs/theme';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import muiTheme from '../client/configs/muiTheme';
 
 class Context extends Component {
   getChildContext() {
     return {
-      muiTheme: getMuiTheme(rawTheme),
+      muiTheme,
     };
   }
 

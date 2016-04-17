@@ -14,7 +14,7 @@ import {
 import spacing from 'material-ui/styles/spacing';
 import zIndex from 'material-ui/styles/zIndex';
 
-export default {
+const rawTheme = {
   spacing,
   zIndex,
   fontFamily: 'Poppins, sans-serif',
@@ -34,3 +34,5 @@ export default {
     pickerHeaderColor:  blueGrey500,
   },
 };
+
+export default rawTheme;
