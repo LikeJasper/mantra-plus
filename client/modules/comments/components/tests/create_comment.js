@@ -7,7 +7,7 @@ describe('comments.components.create_comment', () => {
   it('should show the error if there are any', () => {
     const error = 'TheError';
     const el = shallow(<CreateComment error={error} />);
-    expect(el.html()).to.match(/TheError/);
+    expect(el.text()).to.match(/TheError/);
   });
 
   it('should display the create comment form', () => {
@@ -34,9 +34,9 @@ describe('comments.components.create_comment', () => {
 
     instance.refs = {
       text: {
-        getValue:      () => text,
-        _getInputNode: () => ({}),
-        setState:      () => null,
+        getValue: () => text,
+        input:    {},
+        setState: () => null,
       },
     };
 

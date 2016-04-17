@@ -26,7 +26,7 @@ class NewPost extends React.Component {
       <Card>
         <CardTitle
           title="Add New Post"
-          subtitle={error ? <span style={{ color: 'red' }}>{error}</span> : null}
+          subtitle={error}
         />
         <CardText>
           <form className="new-post" onSubmit={ this.createPost }>

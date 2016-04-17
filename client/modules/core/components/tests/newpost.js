@@ -1,13 +1,17 @@
 const { describe, it } = global;
-import { expect } from 'chai';
+import chai, { expect } from 'chai';
+import chaiEnzyme from 'chai-enzyme';
 import { shallow } from 'enzyme';
 import NewPost from '../newpost';
+
+chai.use(chaiEnzyme());
 
 describe('core.components.newpost', () => {
   it('should show the error if there are any', () => {
     const error = 'TheError';
     const el = shallow(<NewPost error={error} />);
-    expect(el.html()).to.match(/TheError/);
+    expect(el.find('CardTitle').first())
+      .to.have.prop('subtitle', error);
   });
 
   it('should display the create post form', () => {
