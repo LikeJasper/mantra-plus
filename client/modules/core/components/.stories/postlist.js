@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
+import Context from '../../../../../.storybook/Context';
 import PostList from '../postlist';
 
 storiesOf('core.PostList', module)
@@ -11,6 +12,8 @@ storiesOf('core.PostList', module)
     ];
 
     return (
-      <PostList posts={posts} />
+      <Context>
+        <PostList posts={posts} />
+      </Context>
     );
   });

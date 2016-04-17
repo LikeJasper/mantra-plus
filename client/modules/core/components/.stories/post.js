@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
+import Context from '../../../../../.storybook/Context';
 import Post from '../post';
 
 storiesOf('core.Post', module)
@@ -18,7 +19,9 @@ storiesOf('core.Post', module)
     };
 
     return (
-      <Post post={post} />
+      <Context>
+        <Post post={post} />
+      </Context>
     );
   })
   .add('saving', () => {
@@ -37,6 +40,8 @@ storiesOf('core.Post', module)
     };
 
     return (
-      <Post post={post} />
+      <Context>
+        <Post post={post} />
+      </Context>
     );
   });
